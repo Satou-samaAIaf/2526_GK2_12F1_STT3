@@ -5,10 +5,10 @@ function toggleTheme() {
   body.classList.toggle("dark");
 
   if (body.classList.contains("dark")) {
-    icon.textContent = "☀️";
+    icon.textContent = "🌙";
     localStorage.setItem("theme", "dark");
   } else {
-    icon.textContent = "🌙";
+    icon.textContent = "🌸";
     localStorage.setItem("theme", "light");
   }
 }
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const icon = document.getElementById("themeIcon");
   if (saved === "dark") {
     document.body.classList.add("dark");
-    icon.textContent = "☀️";
-  } else {
     icon.textContent = "🌙";
+  } else {
+    icon.textContent = "🌸";
   }
 });

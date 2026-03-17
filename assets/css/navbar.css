@@ -38,6 +38,7 @@
      height: 45px;
      width: 45px;
      padding: 0;
+     padding-right: 3px;
      width: auto;
  }
 
@@ -58,8 +59,8 @@
 
  #navbar .main-nav a:hover,
  #navbar .main-nav a.active {
-     color: #fff;
-     font-weight: bold;
+     color: var(--main-text-color);
+     font-weight: 700;
  }
 
  .menu-toggle {
@@ -125,7 +126,7 @@
      }
 
      .menu-toggle:hover {
-         background: var(--darkermain-color);
+         background: linear-gradient(90deg, rgba(255,179,219,0.12), rgba(255,111,181,0.08));
      }
 
      #navbar .nav-actions {

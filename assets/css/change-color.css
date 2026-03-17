@@ -1,10 +1,10 @@
 body.dark {
-  --main-color: #ffbb00;
-  --darkermain-color: #a15a04;
-  --lightermain-color: #B86B00;
-  --secondary-color: #1A1A1A;
-  --darkersecondary-color: #242424;
-  --lightersecondary-color: #F5F5F5;
+  --main-color: #2b1b2f; /* deep mauve */
+  --darkermain-color: #3a2140;
+  --lightermain-color: #4e2a5a;
+  --secondary-color: #ffd6ee; /* light pastel text */
+  --darkersecondary-color: #e9d6e8;
+  --lightersecondary-color: #2b2b2b;
 }
 
 /* sida skibidi toilet */
@@ -26,67 +26,6 @@ body.dark {
   font-size: 20px;
   color: var(--darkersecondary-color);
   text-align: center;
-}
-
-#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--main-color);
-    opacity: 0.9;
-    border-bottom: 1px solid var(--main-color);
-    z-index: 1000;
-}
-
-#navbar .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#navbar .main-nav {
-    display: flex;
-    gap: 24px;
-    margin-left: 24px;
-}
-
-#navbar .main-nav a {
-    color: var(--secondary-color);
-    font-size: 15px;
-}
-
-#navbar .main-nav a.active,
-#navbar .main-nav a:hover {
-    color: var(--secondary-color);
-}
-
-#navbar .nav-actions {
-    font-size: 16px;
-    display: flex;
-    gap: 16px;
-}
-
-#navbar .nav-actions a {
-    color: var(--secondary-color);
-}
-
-#navbar .nav-actions a.active,
-#navbar .nav-actions a:hover {
-    color: var(--secondary-color);
-}
-
-#navbar .promo {
-  background: var(--main-color);
-  color: var(--secondary-color);
-  font-size: 14px;
-  text-align: center;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--main-color);
-  /* margin-top: 59px; */
 }
 
 .card, .cover {
@@ -122,52 +61,4 @@ body.dark {
   font-weight: bold;
   font-size: 16px;
   color: var(--secondary-color);
-}
-
-#purchase .cta {
-  background: #0071e3;
-  color: var(--lightersecondary-color);
-  border: none;
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-#purchase .cta:hover {
-  background: #339aff;
-}
-
-#purchase .quantity-selector {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-#purchase .quantity-btn {
-  background: var(--lightersecondary-color);
-  border: none;
-  color: var(--lightermain-color);
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-  text-align: center;
-}
-#purchase .quantity-btn:hover {
-  background: var(--lightermain-color);
-}
-#purchase .quantity-input {
-  width: 60px;
-  text-align: center;
-  font-size: 1.3rem;
-  color: var(--lightermain-color);
-  background: var(--lightersecondary-color);
-  border: 1px solid var(--lightersecondary-color);
-  border-radius: 10px;
-  padding: 8px;
 }

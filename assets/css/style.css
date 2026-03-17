@@ -7,22 +7,21 @@
 /* sida skibidi toilet */
 
 :root {
-  --main-color: #060b1a;
-  --darkermain-color: #0b132b;
-  --lightermain-color: #00f7ff;
-  --secondary-color: #3a86ff;
-  --darkersecondary-color: #ffffff;
-  --lightersecondary-color: #10182f;
-  --main-text-color: #3a86ff;
+  --main-color: #fff1f9; 
+  --darkermain-color: #fde8f5;  
+  --lightermain-color: #ffd6ee;
+  --secondary-color: #6b3fa0; 
+  --darkersecondary-color: #2b2b2b; 
+  --lightersecondary-color: #ffffff; 
+  --main-text-color: #ff6fb5; 
 }
 
 html,
 body {
-  background-color: var(--main-color);
-  color: var(--secondary-color);
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  background: linear-gradient(180deg, var(--main-color), #fffaf8);
+  color: var(--darkersecondary-color);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -44,12 +43,12 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--darkersecondary-color);
+  color: var(--secondary-color);
 }
 
 .brand .logo {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--main-text-color);
   padding: 2px 5px;
   border-radius: 6px;
   padding-top: 5px;
@@ -112,10 +111,10 @@ a:hover {
 
 .card,
 .cover {
-  background: var(--darkersecondary-color);
+  background: var(--lightersecondary-color);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(31, 0, 135, 0.564) !important;
+  box-shadow: 0 6px 24px rgba(255, 111, 181, 0.12) !important;
   padding-bottom: 20px;
   transition:
     transform 0.2s ease,
@@ -138,7 +137,7 @@ a:hover {
 .card h3 {
   margin: 16px;
   font-size: 18px;
-  color: var(--main-text-color);
+  color: var(--secondary-color);
 }
 
 .card .muted {
@@ -192,7 +191,7 @@ a:hover {
   position: absolute;
   left: 60px;
   top: 80px;
-  color: var(--lightersecondary-color);
+  color: var(--darkersecondary-color);
   max-width: 450px;
 }
 
@@ -213,12 +212,12 @@ a:hover {
 }
 
 .caption .btn {
-  background: #ffeb00;
-  padding: 12px 24px;
-  border-radius: 10px;
+  background: linear-gradient(90deg, #ffd6ee, #ffb3db);
+  padding: 10px 22px;
+  border-radius: 999px;
   text-decoration: none;
-  color: var(--secondary-color);
-  font-weight: bold;
+  color: var(--darkersecondary-color);
+  font-weight: 600;
 }
 
 .arrows {
@@ -269,10 +268,10 @@ tr:not(:last-child) {
 }
 
 button {
-  background: #0071e3;
+  background: linear-gradient(90deg, #ffb3db, #ff6fb5);
   padding: 10px 18px;
-  border-radius: 25px;
-  color: var(--darkersecondary-color);
+  border-radius: 20px;
+  color: #fff;
   border: none;
   font-size: 14px;
   cursor: pointer;
@@ -280,7 +279,8 @@ button {
 }
 
 button:hover {
-  background: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,107,181,0.12);
 }
 
 .delete-btn {
@@ -362,7 +362,7 @@ button:hover {
 .fade-btn {
   opacity: 0;
   animation: fadeSlideIn 0.8s ease forwards;
-  background: rgba(15, 13, 26, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   padding: 15px 40px;
   font-size: 18px;
@@ -373,9 +373,8 @@ button:hover {
 }
 
 .fade-btn:hover {
-  background: #00374c;
-  transform: scale(1.1);
-  box-shadow: 0 0 12px #d8f4ff;
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,111,181,0.08);
 }
 
 .delay-1 {
