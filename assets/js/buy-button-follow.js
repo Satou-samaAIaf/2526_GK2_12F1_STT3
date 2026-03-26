@@ -6,20 +6,21 @@
         button.dataset.buyFollow = 'true';
         button.style.position = 'absolute';
         button.style.transform = 'translate(-50%, -50%)';
-        button.style.left = '50%';
-        button.style.top = '50%';
+        button.style.left = '-1000px';
+        button.style.top = '-1000px';
         button.style.pointerEvents = 'auto';
 
         const speed = Number(options.speed) || 400; // px per second
 
-        let targetX = window.pageXOffset + window.innerWidth / 2;
-        let targetY = window.pageYOffset + window.innerHeight / 2;
-        let currentX = targetX;
-        let currentY = targetY;
+        let targetX = -1000;
+        let targetY = -1000;
+        let currentX = -1000;
+        let currentY = -1000;
         let lastTimestamp = null;
         let firstFrame = false;
-        let lastClientX = window.innerWidth / 2;
-        let lastClientY = window.innerHeight / 2;
+        let hasMousePosition = false;
+        let lastClientX = 0;
+        let lastClientY = 0;
 
         function updateTarget(event) {
             lastClientX = event.clientX;
@@ -29,8 +30,11 @@
         }
 
         function updateTargetOnScroll() {
-            targetX = lastClientX + window.pageXOffset;
-            targetY = lastClientY + window.pageYOffset;
+            if (hasMousePosition) {
+                targetX = lastClientX + window.pageXOffset;
+                targetY = lastClientY + window.pageYOffset;
+            }
+
             if (!firstFrame) {
                 currentX = targetX;
                 currentY = targetY;
@@ -80,5 +84,30 @@
         requestAnimationFrame(frame);
     }
 
+    function enqueueBuyButtonFollow(container, options = { speed: 450 }) {
+        // Keep this API for callers that have explicit control.
+        if (typeof initBuyButtonFollow === 'function') {
+            initBuyButtonFollow(container, options);
+        }
+    }
+
+    function autoStart() {
+        const targetContainer = document.getElementById('purchase');
+        if (targetContainer) {
+            enqueueBuyButtonFollow(targetContainer, { speed: 450 });
+        }
+    }
+
+    // Run on initial load if possible
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        autoStart();
+    } else {
+        document.addEventListener('DOMContentLoaded', autoStart);
+    }
+
+    // Also run after components are dynamically loaded
+    document.addEventListener('importComponentsReady', autoStart);
+
     window.initBuyButtonFollow = initBuyButtonFollow;
+    window.enqueueBuyButtonFollow = enqueueBuyButtonFollow;
 })();

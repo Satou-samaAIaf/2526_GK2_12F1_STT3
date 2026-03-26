@@ -21,9 +21,19 @@
     pathSegments.pop();
     const baseUrl = pathSegments.join('/');
 
-    function enqueueBuyButtonFollow(container, options = { speed: 450 }) {
-        if (window.initBuyButtonFollow) {
-            window.initBuyButtonFollow(container, options);
+    let loadedComponentCount = 0;
+    const totalComponents = components.length;
+
+    window.importComponentsReady = new Promise((resolve, reject) => {
+        window.importComponentsResolve = resolve;
+        window.importComponentsReject = reject;
+    });
+
+    function markComponentLoaded() {
+        loadedComponentCount += 1;
+        if (loadedComponentCount === totalComponents) {
+            window.importComponentsResolve();
+            document.dispatchEvent(new Event('importComponentsReady'));
         }
     }
 
@@ -81,7 +91,7 @@
             // A. Serve from Cache (Instant, no flicker)
             targetElement.innerHTML = cachedContent;
             console.log(`Loaded ${fileName} from cache.`);
-            enqueueBuyButtonFollow(targetElement, { speed: 450 });
+            markComponentLoaded();
         } else {
             // B. Fetch from Network
             fetch(htmlPath)
@@ -94,10 +104,11 @@
                     targetElement.innerHTML = html;
                     // Save to Session Storage for next time
                     sessionStorage.setItem(cacheKey, html);
-                    enqueueBuyButtonFollow(targetElement, { speed: 450 });
+                    markComponentLoaded();
                 })
                 .catch(error => {
                     console.error(`Error loading ${fileName}:`, error);
+                    window.importComponentsReject(error);
                 });
         }
     });
