@@ -7,8 +7,9 @@
 /* sida skibidi toilet */
 
 :root {
-  --main-color: #fff1f9; 
-  --darkermain-color: #fde8f5;  
+  --main-color: #ffefff; 
+  /* What is this even for? */
+  /* --darkermain-color: #fde8f5;  */ 
   --lightermain-color: #ffd6ee;
   --secondary-color: #6b3fa0; 
   --darkersecondary-color: #2b2b2b; 

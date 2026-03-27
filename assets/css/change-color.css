@@ -1,8 +1,9 @@
 body.dark {
-  --main-color: #2b1b2f; /* deep mauve */
-  --darkermain-color: #3a2140;
+  --main-color: #2b1b2f;
+  /* What is this even for? */
+  /* --darkermain-color: #3a2140; */
   --lightermain-color: #4e2a5a;
-  --secondary-color: #ffd6ee; /* light pastel text */
+  --secondary-color: #ffd6ee;
   --darkersecondary-color: #e9d6e8;
   --lightersecondary-color: #2b2b2b;
 }
