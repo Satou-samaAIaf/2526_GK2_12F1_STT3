@@ -6,6 +6,7 @@
   background: var(--main-color);
   opacity: 0.95;
   z-index: 1000;
+  transition: transform 20s ease;
 }
 
 @keyframes pulse {
@@ -101,10 +102,13 @@
   color: var(--secondary-color);
   padding: 10px;
   text-align: center;
+}
+
+#navbar .promo, #navbar .logo{
   transition: transform 20s ease;
 }
 
-#navbar .promo:hover {
+#navbar .promo:hover, #navbar .logo:hover {
   transform: rotate(18000deg);
 }
 
