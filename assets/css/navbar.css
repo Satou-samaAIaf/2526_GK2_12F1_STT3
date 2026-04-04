@@ -10,7 +10,8 @@
 }
 
 @keyframes pulse {
-  0%, 100%{
+  0%,
+  100% {
     font-size: 0.9em;
   }
   50% {
@@ -104,15 +105,17 @@
   text-align: center;
 }
 
-#navbar .promo, #navbar .logo{
+#navbar .promo,
+#navbar .logo {
   transition: transform 20s ease;
 }
 
-#navbar .promo:hover, #navbar .logo:hover {
+#navbar .promo:hover,
+#navbar .logo:hover {
   transform: rotate(18000deg);
 }
 
-#navbar .promo{
+#navbar .promo {
   animation: pulse 1s ease-in-out infinite;
 }
 

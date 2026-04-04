@@ -22,7 +22,10 @@ function toggleTheme() {
     rollTarget.classList.add("barrel-roll");
 
     // show secret full-row item on products page or blog page after barrel roll
-    if (window.location.pathname.includes("products.html") || window.location.pathname.includes("blog.html")) {
+    if (
+      window.location.pathname.includes("products.html") ||
+      window.location.pathname.includes("blog.html")
+    ) {
       body.classList.add("show-secret");
     }
 
@@ -35,8 +38,7 @@ function toggleTheme() {
   }
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("theme");
   const icon = document.getElementById("themeIcon");
   const isDark = saved === "dark";

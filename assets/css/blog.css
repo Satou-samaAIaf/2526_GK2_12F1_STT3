@@ -11,7 +11,11 @@
   grid-template-columns: 1.3fr 1fr;
   gap: 40px;
   align-items: center;
-  background: linear-gradient(180deg, rgba(255, 239, 251, 0.95), rgba(255, 214, 239, 0.65));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 239, 251, 0.95),
+    rgba(255, 214, 239, 0.65)
+  );
   border: 1px solid rgba(255, 182, 230, 0.45);
   border-radius: 28px;
   padding: 40px;
@@ -22,7 +26,11 @@
 
 body.dark .hero-card,
 body.dark .article-hero {
-  background: linear-gradient(180deg, rgba(40, 16, 52, 0.85), rgba(84, 37, 108, 0.55));
+  background: linear-gradient(
+    180deg,
+    rgba(40, 16, 52, 0.85),
+    rgba(84, 37, 108, 0.55)
+  );
   border-color: rgba(255, 182, 230, 0.22);
   box-shadow: 0 18px 40px rgba(90, 33, 120, 0.18);
 }
@@ -74,9 +82,11 @@ body.dark .eyebrow {
 .blog-card {
   background: var(--lightersecondary-color);
   border-radius: 26px;
-  overflow: hidden;   
+  overflow: hidden;
   box-shadow: 0 12px 30px rgba(189, 90, 156, 0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .blog-card:hover {
@@ -157,7 +167,9 @@ body.dark .article-body {
   padding: 14px 28px;
   border-radius: 999px;
   box-shadow: 0 12px 25px rgba(255, 148, 213, 0.24);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .blog-card.secret-card {

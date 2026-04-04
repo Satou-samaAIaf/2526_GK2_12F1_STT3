@@ -20,20 +20,24 @@ body.dark {
   text-align: center;
 }
 
-.card, .cover {
+.card,
+.cover {
   background: var(--lightersecondary-color);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 255, 255, 0.7) !important;
   padding-bottom: 20px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0, 255, 145, 0.6) !important;
 }
 
-.card img, .cover img {
+.card img,
+.cover img {
   width: 100%;
   height: 370px;
   display: block;

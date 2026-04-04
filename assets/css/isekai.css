@@ -1,16 +1,16 @@
-.product-gallery{
-    transition: 0.2s ease-in-out;
+.product-gallery {
+  transition: 0.2s ease-in-out;
 }
 
-.product-gallery:hover #mainImage{
-    background-size: 125%;
+.product-gallery:hover #mainImage {
+  background-size: 125%;
 }
 
 #purchase .highlight {
-    display: inline-block;
-    transition: transform 1.5s ease;
+  display: inline-block;
+  transition: transform 1.5s ease;
 }
 
-#purchase:hover .highlight{
-    transform: rotate(360deg);
+#purchase:hover .highlight {
+  transform: rotate(360deg);
 }

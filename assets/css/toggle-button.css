@@ -1,17 +1,17 @@
-
-
 .neon-toggle {
   width: 70px;
   height: 34px;
   background: #fff;
   border-radius: 50px;
-  position: fixed; 
+  position: fixed;
   bottom: 25px;
-  right: 25px; 
-  z-index: 9999; 
+  right: 25px;
+  z-index: 9999;
   cursor: pointer;
   padding: 4px;
-  box-shadow: 0 0 12px #00eaff, inset 0 0 8px #00bcd4;
+  box-shadow:
+    0 0 12px #00eaff,
+    inset 0 0 8px #00bcd4;
   transition: 0.3s ease;
 }
 
@@ -40,7 +40,9 @@ body.dark .toggle-circle {
 
 body.dark .neon-toggle {
   background: #333;
-  box-shadow: 0 0 12px #ff0000, inset 0 0 8px #ff0048;
+  box-shadow:
+    0 0 12px #ff0000,
+    inset 0 0 8px #ff0048;
 }
 
 #themeIcon {
