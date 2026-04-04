@@ -85,7 +85,7 @@
 
         // 3. Load HTML with Caching Strategy
         const path = window.location.pathname.replace(/\\/g, '/');
-        const rootPrefix = path.includes('/pages/') || path.includes('/product/') ? '../' : './';
+        const rootPrefix = path.includes('/pages/') || path.includes('/product/') || path.includes('/article/') ? '../' : './';
         const cacheKey = `cached_html_${fileName}_${rootPrefix}`;
         const cachedContent = sessionStorage.getItem(cacheKey);
 

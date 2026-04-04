@@ -3,16 +3,15 @@ let barrelRollTimeout = null;
 
 function toggleTheme() {
   const body = document.body;
-  const root = document.documentElement;
   const icon = document.getElementById("themeIcon");
 
   body.classList.toggle("dark");
 
   if (body.classList.contains("dark")) {
-    icon.textContent = "🌙";
+    if (icon) icon.textContent = "🌙";
     localStorage.setItem("theme", "dark");
   } else {
-    icon.textContent = "🌸";
+    if (icon) icon.textContent = "🌸";
     localStorage.setItem("theme", "light");
   }
 
@@ -22,8 +21,8 @@ function toggleTheme() {
     const rollTarget = body; // use body for reliable page rotation
     rollTarget.classList.add("barrel-roll");
 
-    // show secret full-row item on products page after barrel roll
-    if (window.location.pathname.includes("products.html")) {
+    // show secret full-row item on products page or blog page after barrel roll
+    if (window.location.pathname.includes("products.html") || window.location.pathname.includes("blog.html")) {
       body.classList.add("show-secret");
     }
 
@@ -40,10 +39,10 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem("theme");
   const icon = document.getElementById("themeIcon");
-  if (saved === "dark") {
-    document.body.classList.add("dark");
-    icon.textContent = "🌙";
-  } else {
-    icon.textContent = "🌸";
+  const isDark = saved === "dark";
+
+  document.body.classList.toggle("dark", isDark);
+  if (icon) {
+    icon.textContent = isDark ? "🌙" : "🌸";
   }
 });
