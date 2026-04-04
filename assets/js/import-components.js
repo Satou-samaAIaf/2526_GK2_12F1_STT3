@@ -84,8 +84,16 @@
         }
 
         // 3. Load HTML with Caching Strategy
-        const cacheKey = `cached_html_${fileName}`;
+        const path = window.location.pathname.replace(/\\/g, '/');
+        const rootPrefix = path.includes('/pages/') || path.includes('/product/') ? '../' : './';
+        const cacheKey = `cached_html_${fileName}_${rootPrefix}`;
         const cachedContent = sessionStorage.getItem(cacheKey);
+
+        const processHtml = (html) => {
+            const processed = html.replace(/{{ROOT}}/g, rootPrefix);
+            sessionStorage.setItem(cacheKey, processed);
+            return processed;
+        };
 
         if (cachedContent) {
             // A. Serve from Cache (Instant, no flicker)
@@ -100,10 +108,9 @@
                     return response.text();
                 })
                 .then(html => {
+                    const processedHtml = processHtml(html);
                     // Inject HTML
-                    targetElement.innerHTML = html;
-                    // Save to Session Storage for next time
-                    sessionStorage.setItem(cacheKey, html);
+                    targetElement.innerHTML = processedHtml;
                     markComponentLoaded();
                 })
                 .catch(error => {
