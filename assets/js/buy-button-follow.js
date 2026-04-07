@@ -10,7 +10,7 @@
     button.style.top = "-1000px";
     button.style.pointerEvents = "auto";
 
-    const speed = Number(options.speed) || 400; // px per second
+    const speed = Number(options.speed) || 400;
 
     let targetX = -1000;
     let targetY = -1000;
@@ -95,7 +95,6 @@
   }
 
   function enqueueBuyButtonFollow(container, options = { speed: 450 }) {
-    // Keep this API for callers that have explicit control.
     if (typeof initBuyButtonFollow === "function") {
       initBuyButtonFollow(container, options);
     }
@@ -108,7 +107,6 @@
     }
   }
 
-  // Run on initial load if possible
   if (
     document.readyState === "complete" ||
     document.readyState === "interactive"
@@ -118,7 +116,6 @@
     document.addEventListener("DOMContentLoaded", autoStart);
   }
 
-  // Also run after components are dynamically loaded
   document.addEventListener("importComponentsReady", autoStart);
 
   window.initBuyButtonFollow = initBuyButtonFollow;

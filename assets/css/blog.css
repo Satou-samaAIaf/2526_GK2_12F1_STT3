@@ -61,7 +61,7 @@ body.dark .article-hero {
   font-size: 0.9rem;
 }
 
-body.dark .eyebrow {
+body.dark .eyebrow, body.dark .tag {
   color: var(--lightermain-color);
 }
 

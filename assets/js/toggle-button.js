@@ -18,7 +18,7 @@ function toggleTheme() {
   themeClickCounter += 1;
   if (themeClickCounter >= 5) {
     themeClickCounter = 0;
-    const rollTarget = body; // use body for reliable page rotation
+    const rollTarget = body;
     rollTarget.classList.add("barrel-roll");
 
     if (

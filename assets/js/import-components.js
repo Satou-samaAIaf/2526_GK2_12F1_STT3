@@ -3,17 +3,15 @@
   const queryString = script.src.split("?")[1];
   const urlParams = new URLSearchParams(queryString);
 
-  // Get the comma-separated list (e.g., "navbar,footer")
   const componentsParam = urlParams.get("components");
-  const loadCss = urlParams.get("css") !== "false"; // Optional: css=false will disable CSS loading
-  const loadJs = urlParams.get("js") !== "false"; // Optional: js=false will disable JS loading
+  const loadCss = urlParams.get("css") !== "false";
+  const loadJs = urlParams.get("js") !== "false"; 
 
   if (!componentsParam) {
     console.error('import.js: No "components" parameter specified.');
     return;
   }
 
-  // Get baseUrl (assets/)
   const components = componentsParam.split(",").map((item) => item.trim());
   const scriptPath = script.src.split("?")[0];
   const pathSegments = scriptPath.split("/");
@@ -48,7 +46,6 @@
       return;
     }
 
-    // 1. Inject CSS if enabled and the file exists
     if (loadCss && !document.querySelector(`link[href="${cssPath}"]`)) {
       fetch(cssPath)
         .then((response) => {
@@ -69,7 +66,6 @@
         });
     }
 
-    // 2. Inject JS if enabled and the file exists
     if (loadJs && !document.querySelector(`script[src="${jsPath}"]`)) {
       fetch(jsPath)
         .then((response) => {
@@ -89,7 +85,6 @@
         });
     }
 
-    // 3. Load HTML with Caching Strategy
     const path = window.location.pathname.replace(/\\/g, "/");
     const rootPrefix =
       path.includes("/pages/") ||
@@ -107,12 +102,11 @@
     };
 
     if (cachedContent) {
-      // A. Serve from Cache (Instant, no flicker)
       targetElement.innerHTML = cachedContent;
       console.log(`Loaded ${fileName} from cache.`);
       markComponentLoaded();
     } else {
-      // B. Fetch from Network
+
       fetch(htmlPath)
         .then((response) => {
           if (!response.ok) throw new Error(response.statusText);
@@ -120,7 +114,7 @@
         })
         .then((html) => {
           const processedHtml = processHtml(html);
-          // Inject HTML
+    
           targetElement.innerHTML = processedHtml;
           markComponentLoaded();
         })

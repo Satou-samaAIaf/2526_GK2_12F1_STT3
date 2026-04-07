@@ -1,8 +1,5 @@
-// secret-card.js
 
 function onSecretCardClick(event, card, link) {
-  // User-defined callback invoked before the redirect animation starts.
-  // Override this in another script block or file if needed.
   console.log("Secret card clicked:", link.href);
 }
 
