@@ -21,9 +21,8 @@ function toggleTheme() {
     const rollTarget = body; // use body for reliable page rotation
     rollTarget.classList.add("barrel-roll");
 
-    // show secret full-row item on products page or blog page after barrel roll
     if (
-      window.location.pathname.includes("products.html") ||
+      window.location.pathname.includes("shop.html") ||
       window.location.pathname.includes("blog.html")
     ) {
       body.classList.add("show-secret");
